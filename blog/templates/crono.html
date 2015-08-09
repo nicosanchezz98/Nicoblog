@@ -1,0 +1,153 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block scripts %}
+
+           <script type="text/javascript">
+            var reloj=document.getElementById("reloj");
+            var marcha=0;
+            var cro=0;
+            var iniciado=0;
+
+            function tiempo() {
+                actual=new Date(); 
+                cro=actual-emp;
+                cr=new Date();
+                cr.setTime(cro); 
+                centesimas=cr.getMilliseconds();
+                centesimas=centesimas/10;
+                centesimas=Math.round(centesimas)
+                segundos=cr.getSeconds();
+                minutos=cr.getMinutes();
+                if (centesimas<10) {centesimas="0"+centesimas;} 
+                if (segundos<10) {segundos="0"+segundos;} 
+                if (minutos<10) {minutos="0"+minutos;} 
+                reloj.innerHTML='<h3>'+minutos+" : "+segundos+" : "+centesimas+'</h3>';
+            }
+
+            function parar() { 
+                if (marcha==1) {
+                    clearInterval(elcrono);
+                    marcha=0;
+                    iniciado=0;
+                    document.getElementById("continuar").innerHTML = '<a type="button" class="btn main-btn pull-center wow bounceIn" data-wow-duration="0s" data-wow-delay="0s" id=empezar onclick=continuar() value=Start><i class="fa fa-play fa-2x"></i></a>';
+                    $("#vueltas").append("<hr/>");
+                }
+
+            }
+
+
+            function parar1() { 
+                if (marcha==1) {
+                    clearInterval(elcrono);
+                    marcha=0;
+                    document.getElementById("continuar").innerHTML = '<a type="button" class="btn main-btn pull-center wow bounceIn" data-wow-duration="0s" data-wow-delay="0s" id=empezar onclick=continuar() value=Start><i class="fa fa-play fa-2x"></i></a>';
+                }
+            }
+
+            function vuelta(){
+                var vuelta = document.getElementById("reloj").innerHTML;
+                var vueltas = document.getElementById("vueltas");
+                var h3 = document.createElement("h3");
+                h3.innerHTML = vuelta;
+                vueltas.appendChild(h3);
+
+            }
+
+            function continuar() {
+                if (iniciado==0){
+                    if (marcha==0) {
+                        emp=new Date();
+                        elcrono=setInterval(tiempo,10); 
+                        marcha=1;
+                        iniciado=1;
+                        document.getElementById("continuar").innerHTML = '<a type="button" class="btn main-btn pull-center wow bounceIn" data-wow-duration="0s" data-wow-delay="0s" id=empezar onclick=parar1() value=Start><i class="fa fa-pause fa-2x"></i></a>';
+                    }
+                }
+                if (marcha==0) { 
+                    emp2=new Date();
+                    emp2=emp2.getTime();
+                    emp3=emp2-cro;
+                    emp=new Date();
+                    emp.setTime(emp3);
+                    elcrono=setInterval(tiempo,10);
+                    marcha=1;
+                    document.getElementById("continuar").innerHTML = '<a type="button" class="btn main-btn pull-center wow bounceIn" data-wow-duration="0s" data-wow-delay="0s" id=pausa onclick=parar1() value=Pausa><i class="fa fa-pause fa-2x"></i></a>';
+                }		
+            }
+
+            function reiniciar() {
+                if (marcha==1) { 
+                    clearInterval(elcrono); 
+                    marcha=0;
+                }
+                cro=0;
+                reloj.innerHTML = "00 : 00 : 00";
+                document.getElementById("btnPlay_Restart").innerHTML = '<input type="button" id=empezar onclick=iniciar() value=Start />';
+            }	
+        </script>
+
+
+    {% endblock %}
+
+{% block content %}
+ </div>
+</div>
+
+<section id="banner" class="section">
+	<div class="container">
+    	<div class="intro">
+         		<h1 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s"><i class="fa fa-clock-o fa-4x"></i></span></h1>
+        <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.0s">This is <strong>Nico</strong>Blog</h2>
+        <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.2s">Cronometro</p>
+        </div>
+        <div class="clearfix"></div>
+	</div>
+    	 <!-- Carousel -->
+</section>
+
+<section id="aboutt">
+	<div class="container">
+        <div class="row">
+      
+            
+            
+              <div class="cron">
+                        <div id="reloj">
+                                <div class="col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+
+                            <h3>00 : 00 : 00</h3>
+                            <span class="line" id="liniat"></span>
+                            <br>
+                        </div>
+                                                    </div>
+
+                        <div id="orden">
+
+                            <div id="continuar" style="
+                                                       display: inline-block;
+                                                       ">
+                                <a type="button" class="btn main-btn pull-center wow bounceIn animated" data-wow-duration="1s" data-wow-delay="1s" id="pausa" onclick="continuar()" value="Pausa" style="visibility: visible; -webkit-animation: bounceIn 1s 1s;">
+                                    <i class="fa fa-play fa-2x"></i></a></div>
+                            <div id="btnStop_Reset" style="
+                                                           display: inline-block;
+                                                           ">
+
+                                <a type="button" class="btn main-btn pull-center wow bounceIn animated" data-wow-duration="1s" data-wow-delay="1s" id="stop" onclick="parar()" value="Stop" style="visibility: visible; -webkit-animation: bounceIn 1s 1s;">
+                                    <i class="fa fa-stop fa-2x"></i></a>
+                                <a type="button" class="btn main-btn pull-center wow bounceIn animated" data-wow-duration="1s" data-wow-delay="1s" id="vuelta" onclick="vuelta()" value="Vuelta" style="visibility: visible; -webkit-animation: bounceIn 1s 1s;">
+                                    <i class="fa fa-circle-o-notch fa-2x"></i></a>
+                            </div>
+                        </div>      
+
+                        <div id="vueltas">
+                        </div>
+                    </div>   
+ 
+            
+        </div>
+    </div>
+</section>
+
+{% endblock %}

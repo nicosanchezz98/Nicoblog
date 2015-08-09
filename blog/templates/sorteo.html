@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+
+  </div>
+</div>
+<section id="banner" class="section">
+	<div class="container">
+    	<div class="intro">
+         		<h1 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s"><i class="fa fa-gift fa-4x"></i></span></h1>
+        <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.0s">This is <strong>Nico</strong>Blog</h2>
+        <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.2s">Gana un Iphone</p>
+        </div>
+        <div class="clearfix"></div>
+	</div>
+    	 <!-- Carousel -->
+</section>
+
+    <section id="contactt">
+	<div class="container">
+        <div class="row">
+            <h3 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">Completa el formulario para el sorteo del iphone</h3>
+            <div class="col-md-12">
+            	<form role="form" id="contact-form" class="contact-form">
+                	<div class="row">
+                		<div class="col-md-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                  		<div class="form-group">
+                            <input type="text" class="form-control" name="Name" autocomplete="off" id="Name" placeholder="Nombre">
+                  		</div>
+                  	</div>
+                    	<div class="col-md-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                  		<div class="form-group">
+                            <input type="email" class="form-control" name="email" autocomplete="off" id="email" placeholder="E-mail">
+                  		</div>
+                  	</div>
+                  	</div>
+                  	<div class="row">
+                  		<div class="col-md-12 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                  		<div class="form-group">
+                            <textarea class="form-control textarea" rows="3" name="Message" id="Message" placeholder="Comentarios"></textarea>
+                  		</div>
+                  	</div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                  <button type="submit" onmouseover="ejecutar(this)" onclick="clic()" tabindex="-1" class="btn main-btn pull-right wow bounceIn" data-wow-duration="1s" data-wow-delay="1s" id="no">Enviar Formulario</button>
+                  </div>
+                        
+                  </div>
+                </form>
+			</div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+{% endblock %}
+
+{% block scripts %}
+       <script>
+    
+
+    
+    
+function ejecutar(btn){
+number = Math.floor((Math.random() *300)+1); 
+numberLeft = Math.floor((Math.random() *85)+1);   
+
+    
+document.getElementById("no").setAttribute("style", "margin-right:" + numberLeft + "%; margin-top:" + number + "px")
+ 
+      
+} 
+    
+    
+function clic(){
+alert("Muy bien se ha enviado tu solicitud para ganar un iphone(Por quejas comunicarse con bossio)");
+  
+} 
+        </script>
+
+    {% endblock %}

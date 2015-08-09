@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+ </div>
+</div>
+{% block scripts %}
+<script>
+var Int2;
+Int2 = setInterval(progress, 50);
+var Int1;
+Int1 = setInterval(ChangeImg, 3000);
+var img = ["{% static 'images/portfolio/portfolio1-thumb.jpg' %}", "{% static 'images/portfolio/portfolio2-thumb.jpg' %}", "{% static 'images/portfolio/portfolio3-thumb.jpg' %}", "{% static 'images/portfolio/portfolio4-thumb.jpg' %}"];
+var asd = 2;
+var cont =0;
+function ChangeImg(){
+    number = Math.floor((Math.random() * 4) + 0);
+    if (asd!=number){
+        document.getElementById("imagen").setAttribute("src", img[number]);
+        asd = number;
+        cont = 0;
+    }else{
+        cont=cont+1;
+        if (cont<3){
+           ChangeImg();
+        }else{
+            document.getElementById("imagen").setAttribute("src", img[number+1]);
+        }
+    }
+
+
+}
+    count=0; 
+    function progress() {
+    if (document.images["bar"].width < 400) {
+    document.images["bar"].width += 7;
+    document.images["bar"].height = 75;
+    count = count + 1;
+    document.getElementById("%").setAttribute("value",count + " %");
+  } else {
+    count = 0;
+    document.images["bar"].width = 0;
+    }
+    }
+     
+</script>    
+
+        
+    {% endblock %}
+
+<section id="banner" class="section">
+	<div class="container">
+    	<div class="intro">
+         		<h1 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s"><i class="fa fa-picture-o fa-4x"></i></span></h1>
+        <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.0s">This is <strong>Nico</strong>Blog</h2>
+        <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.2s">Galeria de Imagenes</p>
+        </div>
+        <div class="clearfix"></div>
+	</div>
+    	 <!-- Carousel -->
+</section>
+
+<section id="aboutt">
+	<div class="container">
+        <div class="row">
+            
+            
+                              		<div class="col-md-12 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+
+            
+            <img ALIGN=CENTER src="{% static 'images/portfolio/portfolio5-thumb.jpg' %}" class="img-thumbnail" alt="Changin img" id="imagen">
+
+            
+            <br>
+            <img src="{% static 'images/progres.gif' %}" name="bar" style=" height:20px;"/>
+
+            
+         
+<br>
+            
+                    </div>
+
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

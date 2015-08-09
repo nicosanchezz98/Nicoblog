@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+  </div>
+</div>
+<section id="banner" class="section">
+	<div class="container">
+    	<div class="intro">
+         		<h1 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s"><i class="fa fa-exchange fa-4x"></i></span></h1>
+        <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.0s">This is <strong>Nico</strong>Blog</h2>
+        <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.2s">Cambio de monedas</p>
+        </div>
+        <div class="clearfix"></div>
+	</div>
+    	 <!-- Carousel -->
+</section>
+
+<section id="aboutt">
+	<div class="container">
+        <div class="row">
+      
+     
+
+            <div class=contentt>
+               
+
+                                  		<div class="col-md-12 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+
+                <select id="cmb1" class="form-control" style="width:600px;">
+                    <option value="dolar">Dolares</option>
+                    <option value="argentinos">Pesos Argentinos</option>
+                    <option value="euros">Euros</option>
+                    <option value="libras">Libras</option>
+                    <option value="chilenos">Pesos Chilenos </option>
+                    <option value="uruguayos">Pesos Uruguayos </option>
+                    <option value="reales">Reales</option>
+                </select> 
+                                 <br/>
+
+                </div>
+                                            
+                  		<div class="col-md-12 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+
+                <div id=txb1>
+                    <input class=txb_Resultado type="text" id=txbMonto1 value="">
+                                                        
+                </div>
+                            <br/>
+                            <br/>
+                                                        <span class="line"></span>
+
+                              <br/>
+                                                     
+                              <button type="submit"  onclick="ejecutar(this)"  class="btn main-btn pull-center wow bounceIn" data-wow-duration="1s" data-wow-delay="1s" id="btnConvert"  value="Convert">Convertir</button>
+                                                        <br/>
+                                                                                    <br/>
+
+                            <span class="line"></span>
+                            <br/>                                                      
+                      
+                                            </div>
+
+                  		<div class="col-md-12 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+
+                <select id="cmb2" class="form-control" style="width:600px;">
+                    <option value="dolar">Dolares</option>
+                    <option value="argentinos" >Pesos Argentinos</option>
+                    <option value="euros">Euros</option>
+                    <option value="libras">Libras</option>
+                    <option value="chilenos">Pesos Chilenos </option>
+                    <option value="uruguayos">Pesos Uruguayos </option>
+                    <option value="reales">Reales</option>
+                </select> 
+                                                        <br/>
+
+                                            </div>
+
+                  		<div class="col-md-12 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+
+                <div id=txb2>
+
+                    <input class=txb_Resultado type="text" id="txbMonto2" value="" readonly="readonly" >
+                               
+                                                        <br/>
+                                                         <br/>
+                    
+                </div>
+
+                    </div>
+
+                                                        <br/>
+                                                        <br/>
+                                                        <br/>
+                
+                    <button type="submit"  onclick="ejecutar(this)"  class="btn main-btn pull-center wow bounceIn" data-wow-duration="1s" data-wow-delay="1s" id="btnClear"  value="Clear">Limpiar</button>
+
+  <br/>
+                
+            </div>
+        </div>
+    </div>
+    
+    {% endblock %}
+    
+     {% block scripts %}
+         
+
+        <script>
+            function ejecutar(btn){
+                aprieta = btn.value;
+                monto1 =  document.getElementById("txbMonto1").value;
+                monto2 = document.getElementById("txbMonto2").value;
+                moneda1 = document.getElementById("cmb1").selectedIndex;
+                moneda2 = document.getElementById("cmb2").selectedIndex;
+
+                if (aprieta=="Clear"){
+
+                    document.getElementById("txb1").innerHTML= '<input class=txb_Resultado type="text" id=txbMonto1 value="">';
+                    document.getElementById("txb2").innerHTML= '<input class=txb_Resultado type="text" id=txbMonto2 value="">';
+                }
+
+                switch (moneda1){
+                    case 0:
+                        cotizacion1 = 0.11271;
+                        break;
+                    case 1:
+                        cotizacion1 = 1;
+                        break;
+                    case 2:
+                        cotizacion1 = 0.10524;
+                        break;
+                    case 3:
+                        cotizacion1 = 0.07575;
+                        break;
+                    case 4:
+                        cotizacion1 = 68.8824;
+                        break;
+                    case 5:
+                        cotizacion1 = 2.90185;
+                        break;
+                    case 6:
+                        cotizacion1 = 0.340699;
+                        break;
+                }
+
+                switch (moneda2){
+                    case 0:
+                        cotizacion2 = 0.11271;
+                        break;
+                    case 1:
+                        cotizacion2 = 1;
+                        break;
+                    case 2:
+                        cotizacion2 = 0.10524;
+                        break;
+                    case 3:
+                        cotizacion2 = 0.07575;
+                        break;
+                    case 4:
+                        cotizacion2 = 68.8824;
+                        break;
+                    case 5:
+                        cotizacion2= 2.90185;
+                        break;
+                    case 6:
+                        cotizacion2 = 0.3406;
+                        break;
+                }
+                if (aprieta=="Convert"){
+                    if (monto1 != ""){
+                        aux = (monto1/cotizacion1)*cotizacion2;
+                        aux = aux.toFixed(3);
+                        document.getElementById("txbMonto2").setAttribute("value", aux);
+                    }
+                    else{
+                        aux = monto2/cotizacion2*cotizacion1;
+                        aux = aux.toFixed(3);
+                        document.getElementById("txbMonto1").setAttribute("value", aux);
+                    } 
+                }
+            }
+        </script>
+
+        
+            {% endblock %}
+
+ 

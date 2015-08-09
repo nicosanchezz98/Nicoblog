@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+ </div>
+</div>
+<section id="banner" class="section">
+	<div class="container">
+    	<div class="intro">
+         		<h1 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s"><i class="fa fa-map-marker fa-4x"></i></span></h1>
+        <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.0s">This is <strong>Nico</strong>Blog</h2>
+        <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.2s">Nuestra Ubicacion</p>
+        </div>
+        <div class="clearfix"></div>
+	</div>
+    	 <!-- Carousel -->
+</section>
+
+<section id="aboutt">
+	<div class="container">
+        <div class="row">
+      
+            
+            
+            
+            
+             <div id="map-canvas" data-pointer="{% static 'images/pointer.png' %}" >Devería aparecer aca</div>
+
+            
+            
+            
+            
+            
+        </div>
+    </div>
+</section>
+    
+{% block scripts %}
+              <script src="https://maps.googleapis.com/maps/api/js"></script>
+        <script src="{% static 'js/maps.js' %}"></script>
+        
+    {% endblock %}
+
+
+
+{% endblock %}
+

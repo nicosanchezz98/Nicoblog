@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+  </div>
+</div>
+<section id="banner" class="section">
+	<div class="container">
+    	<div class="intro">
+         		<h1 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s"><i class="fa fa-calculator fa-4x"></i></span></h1>
+        <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.0s">This is <strong>Nico</strong>Blog</h2>
+        <p class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.2s">Calculadora</p>
+        </div>
+        <div class="clearfix"></div>
+	</div>
+    	 <!-- Carousel -->
+</section>
+
+<section id="aboutt">
+	<div class="container">
+        <div class="row">
+            <div class="wrap">
+                                  		<div class="col-md-12 wow bounceIn" data-wow-duration="2s" data-wow-delay="1s">
+
+<div class="cal">
+ 
+ <div class="screen"></div>
+ <input type="hidden" class="outcome" value="" />
+ <ul class="buttons">
+  <li><a class="clearr">C</a></li>
+  <li><a class="val" href="-">&plusmn;</a></li>
+  <li><a class="val" href="/">&divide;</a></li>
+  <li><a class="val" href="*">&times;</a></li>
+  <li><a class="val" href="7">7</a></li>
+  <li><a class="val" href="8">8</a></li>
+  <li><a class="val" href="9">9</a></li>
+  <li><a class="val" href="-">-</a></li>
+  <li><a class="val" href="4">4</a></li>
+  <li><a class="val" href="5">5</a></li>
+  <li><a class="val" href="6">6</a></li>
+  <li><a class="val" href="+">+</a></li>
+  <li><a class="val" href="1">1</a></li>
+  <li><a class="val" href="2">2</a></li>
+  <li><a class="val" href="3">3</a></li>
+  <li><a class="equal tall">=</a></li>
+  <li><a class="val wide shift" href="0">0</a></li>
+  <li><a class="val shift" href=".">.</a></li>
+ </ul>
+</div></div>
+                	</div>
+
+    
+        </div>
+    </div>
+</section>
+    {% endblock %}
+
+
+     {% block scripts %}
+
+        <!-- calculadora-->
+<script>
+$(function(){
+
+ $(".val").click(function(e){
+  e.preventDefault();
+  var a = $(this).attr("href");
+  $(".screen").append(a);
+  $(".outcome").val($(".outcome").val() + a);
+  
+ });
+ $(".equal").click(function(){
+  $(".outcome").val(eval($(".outcome").val()));
+  $(".screen").html(eval($(".outcome").val()));
+ });
+ $(".clearr").click(function(){
+  $(".outcome").val("");
+  $(".screen").html("");
+ });
+ $(".min").click(function(){
+  $(".cal").stop().animate({
+   width: "0px", height: "0px", marginLeft: "700px", marginTop: "1000px"
+  }, 500);
+  setTimeout(function(){$(".cal").css("display", "none")}, 600);
+ });
+ $(".close").click(function(){
+  $(".cal").css("display", "none");
+ })
+})
+
+</script>
+
+    {% endblock %}
+
+  

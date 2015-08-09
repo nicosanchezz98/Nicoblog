@@ -1,0 +1,348 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+
+{% block content %}
+
+  </div>
+</div>
+<section id="banner" class="section">
+	<div class="container">
+    	<div class="intro">
+    	<h1 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s"><i class="fa fa-users fa-5x"></i></h1>
+        <h2 class="wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1.0s">This is <strong>Nico</strong>Blog</h2>
+        <h4 class="wow fadeInUp" data-wow-duration="0.2s" data-wow-delay="1.0s">{{enviado}}</h4>
+
+                                <br>
+
+                                <br>
+
+                                <br>
+                    <br>
+                    <br>
+
+        </div>
+        <div class="clearfix"></div>
+	</div>
+    	 <!-- Carousel -->
+</section>
+
+<section id="mywork" class="section">
+	<div class="container">
+        <div class="row">
+            <h2 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">Mi trabajo</h2>
+            <div class="portfolio-grid">
+                <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                    <a href="#" data-target="#portfolio1" class="thumbnail hcaption">
+                      <img src="{% static 'images/portfolio/portfolio1-thumb.jpg' %}" alt="Portfolio" title="Desktop Apps" />
+                    </a>
+                    <div id="portfolio1" class="hide-none hover-text">
+                      <h5>Desktop Apps {{user.username}}</h5>
+                      <p>UI/UX Design</p>
+                      	<a class="nivo-light" data-lightbox-gallery="portfolio" href="{% static 'images/portfolio/portfolio1.jpg' %}" title="Desktop Apps">
+                            <i class="mdicon fullscreen"></i>
+                       	</a>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                    <a href="#" data-target="#portfolio2" class="thumbnail hcaption">
+                      <img src="{% static 'images/portfolio/portfolio2-thumb.jpg' %}" alt="Portfolio" title="Desktop Apps" />
+                    </a>
+                    <div id="portfolio2" class="hide-none hover-text">
+                      <h5>Desktop Apps</h5>
+                      <p>UI/UX Design</p>
+                      	<a class="nivo-light" data-lightbox-gallery="portfolio" href="{% static 'images/portfolio/portfolio2.jpg' %}" title="Desktop Apps">
+                            <i class="mdicon fullscreen"></i>
+                       	</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                    <a href="#" data-target="#portfolio3" class="thumbnail hcaption">
+                      <img src="{% static 'images/portfolio/portfolio3-thumb.jpg' %}" alt="Portfolio" title="Apps icons" />
+                    </a>
+                    <div id="portfolio3" class="hide-none hover-text">
+                      <h5>Apps icons</h5>
+                      <p>UI/UX Design</p>
+                      <a class="nivo-light" data-lightbox-gallery="portfolio" href="{% static 'images/portfolio/portfolio3.jpg' %}" title="Apps icons">
+                            <i class="mdicon fullscreen"></i>
+                       	</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                    <a href="#" data-target="#portfolio4" class="thumbnail hcaption">
+                      <img src="{% static 'images/portfolio/portfolio4-thumb.jpg' %}" alt="Portfolio" title="Admin Themes" />
+                    </a>
+                    <div id="portfolio4" class="hide-none hover-text">
+                      <h5>Admin Themes</h5>
+                      <p>UI/UX Design</p>
+                      <a class="nivo-light" data-lightbox-gallery="portfolio" href="{% static 'images/portfolio/portfolio4.jpg' %}" title="Admin Themes">
+                            <i class="mdicon fullscreen"></i>
+                       	</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                    <a href="#" data-target="#portfolio5" class="thumbnail hcaption">
+                      <img src="{% static 'images/portfolio/portfolio5-thumb.jpg' %}" alt="Portfolio" title="Mobile Apps" />
+                    </a>
+                    <div id="portfolio5" class="hide-none hover-text">
+                      <h5>Mobile Apps</h5>
+                      <p>UI/UX Design</p>
+                      <a class="nivo-light" data-lightbox-gallery="portfolio" href="{% static 'images/portfolio/portfolio5.jpg' %}" title="Mobile Apps">
+                            <i class="mdicon fullscreen"></i>
+                       	</a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                    <a href="#" data-target="#portfolio6" class="thumbnail hcaption">
+                      <img src="{% static 'images/portfolio/portfolio6-thumb.jpg' %}" alt="Portfolio" title="Weather Apps" />
+                    </a>
+                    <div id="portfolio6" class="hide-none hover-text">
+                      <h5>Weather Apps</h5>
+                      <p>UI/UX Design</p>
+                      	<a class="nivo-light" data-lightbox-gallery="portfolio" href="{% static 'images/portfolio/portfolio6.jpg' %}" title="Weather Apps">
+                            <i class="mdicon fullscreen"></i>
+                       	</a>
+                    </div>
+                </div>
+              </div>      
+        </div>
+    </div>
+</section>
+<section id="about">
+	<div class="sectionIcon wow bounceIn" data-wow-duration="0.8s" data-wow-delay="1s"><i class="fa fa-angle-down"></i></div>
+	<div class="container">
+        <div class="row">
+            <div class="col-md-12 wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">
+            	
+            	<h2 class="heading">Sobre Nosotros</h2>
+                <div class="col-md-6">
+                <p class="text-left">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id congue dolor. Nulla eget nibh vitae nulla sollicitudin mattis quis vitae tellus. Praesent eget nulla nulla. Nulla pharetra purus vestibulum felis imperdiet, elementum suscipit libero posuere. Quisque mollis tincidunt nisl sed maximus. Maecenas condimentum vitae mi ut feugiat. Morbi sed sodales sapien. Quisque a scelerisque urna. Fusce at felis a erat pulvinar dictum. Pellentesque tempor ultricies turpis sed maximus. Nulla vitae tortor ut risus condimentum convallis quis quis lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent pellentesque tincidunt justo, hendrerit consectetur orci consectetur vel. Proin sed ultricies diam. Etiam sollicitudin tellus vitae nisl interdum mollis. Suspendisse dignissim interdum arcu.
+          </p>
+          </div>
+          <div class="col-md-6">
+                <p class="text-left">
+            Nulla suscipit mollis auctor. Proin quis ex et purus laoreet porttitor. Proin luctus, nulla at tempor porta, ex urna consequat ligula, at dignissim odio velit rhoncus tellus. Phasellus tincidunt tristique turpis nec rutrum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras tincidunt finibus aliquam. Sed pulvinar urna turpis, vitae vestibulum leo finibus id. Donec sem libero, interdum id ipsum tempor, hendrerit luctus dui. Donec maximus vitae mauris dignissim rutrum. Proin ornare at justo vitae sodales. Nam aliquet quam in odio viverra gravida. Aenean non purus nec odio eleifend ornare. Cras ut ullamcorper lacus, vitae porta justo. Nulla metus lorem, egestas vitae volutpat nec, rutrum nec urna. Donec vel felis dui. Cras auctor finibus dolor eu finibus.
+          </p>
+          </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="parallax-1" class="bgParallax" data-speed="15">
+<div class="color-overlay">
+	<div class="container">
+    	<div class="row">
+        	<div class="col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="1s">
+                <br>
+                    		<br>
+                <br>
+                	<br>
+    			<h2 class="heading">Visita nuestros ejercicios!</h2>
+                    		<br>
+                    		<br>
+                    		<br>
+                    		<br>
+                    		
+
+    		</div>
+        </div>
+    </div>
+</div>    
+</section>
+<section id="skills">
+	<div class="container">
+
+    		<h2 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">Curriculum Vitae</h2>
+                        <div class="col-md-12 wow bounceIn" data-wow-duration="2s" data-wow-delay="0.3s">
+                                                                                        <hr/>
+
+
+                        <img src="{% static 'images/perfil1.jpg' %}" class="img-circle" style="height:350px"/>
+                            
+                                                    <br/>
+                                                    <br/>
+                                                                                        <hr/>
+
+                                                    <br/>
+
+                        </div>    
+
+            		<h3 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="1s">Nicolas Sanchez				<span class="line"></span></h3>
+
+					
+        <h3 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">Sobre Mi<span class="line"></span></h3>
+        
+                                                            <hr/>
+
+<div class="col-md-12 wow bounceIn" data-wow-duration="1s" data-wow-delay="0.3s">
+
+           <div class="col-md-6">
+
+                <p class="text-left">
+                            <li><p>Fecha nacimiento: 27/04/1998</p></li>
+                            <li><p>Telefono: +0000 000 00</p></li>
+							<li><p>Direccion: 123 Ipsy Street, Lorem, Ipsy</p></li>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vitae orci sed enim ultricies dignissim sed a augue. Curabitur eget ex eget dui lacinia porttitor. In a lectus odio. Nulla egestas augue ut dui interdum, eget pretium felis vehicula. Nullam cursus auctor nulla non fermentum. Vestibulum aliquam. Curabitur eget ex eget dui lacinia porttitor.Vivamus tortor sem, vulputate sit amet mi sit amet, egestas faucibus purus. 
+          </p>
+          </div>
+    
+          <div class="col-md-6">
+                <p class="text-left">
+                                                    <br/>
+
+         Vestibulum aliquam et velit sed aliquam. Vivamus tortor sem, vulputate sit amet mi sit amet, egestas faucibus purus. Vestibulum sed vestibulum orci. Curabitur blandit viverra diam eget vulputate. Nullam cursus auctor nulla non fermentum. Vestibulum aliquam. Aliquam vitae orci sed enim ultricies dignissim sed a augue. Curabitur eget ex eget dui lacinia porttitor.Vivamus tortor sem, vulputate sit amet mi sit amet, egestas faucibus purus. 
+                    
+          </p>
+              
+         <br/>
+
+        </div>
+
+         </div>
+     
+         <br/>
+                                                                                                                                 <hr/>
+
+            <h3 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">Educacion<span class="line"></span> 
+        </h3>
+
+        <div class="col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.8s">
+
+        <h4>Secundaria</h4>
+					<medium>Instituto tecnico salesiano villada - 2010 . 2015</medium>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+					<h4>Primaria</h4>
+					<medium>Colegio Herbert Diehl - 2003 . 2009</medium>
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
+        
+        
+         <br/>
+                        <br/>
+                                                                                <hr/>
+
+                        </div>
+
+        
+
+        <h2 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">Habilidades</h2>
+
+            	<div class="col-md-6">
+                	<div class="progress">
+                          <div class="progress-bar progress-bar-success wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                            90% Javascript
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-info wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1.0s" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                            70% jQuery
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1.2s" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                            50% PHP
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-danger wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1.4s" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                            80% Java
+                          </div>
+                        </div>
+                </div>
+                <div class="col-md-6">
+                	<div class="progress">
+                          <div class="progress-bar progress-bar-success wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.9s" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 85%">
+                            85% Phyton
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-info wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1.1s" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%">
+                            70% Android
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1.3s" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%">
+                            90% Bootstrap
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-danger wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1.5s" role="progressbar" aria-valuenow="86" aria-valuemin="0" aria-valuemax="100" style="width: 86%">
+                            86% HTML5
+                          </div>
+                        </div>
+              
+                </div>
+        
+                <h2 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">Idiomas</h2>
+
+             	<div class="col-md-6">
+                	<div class="progress">
+                          <div class="progress-bar progress-bar-success wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="0.8s" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                            100% Español
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-info wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1.0s" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                            80% Ingles
+                          </div>
+                        </div>
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning wow fadeInLeft" data-wow-duration="0.8s" data-wow-delay="1.2s" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                            50% Italiano
+                          </div>
+                        </div>
+                    
+                </div>
+            </div>
+    </div>
+</section>    
+
+
+
+<section id="contact">
+	<div class="container">
+        <div class="row">
+            <h2 class="heading wow fadeInUp" data-wow-duration="0.8s" data-wow-delay="0.8s">Contacto</h2>
+            
+ <form action="{% url 'blog_nico:contactame' %}" method="POST" name="sentMessage" id="contactForm">
+        {% csrf_token %}
+            <div class="col-md-12">
+            	<form role="form" id="contact-form" class="contact-form">
+                	<div class="row">
+                		<div class="col-md-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                  		<div class="form-group">
+                            <input type="text" class="form-control" name="nombre" autocomplete="off" id="name" placeholder="Nombre">
+                  		</div>
+                  	</div>
+                    	<div class="col-md-6 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                  		<div class="form-group">
+                            <input type="email" class="form-control" name="mail" autocomplete="off" id="email" placeholder="E-mail">
+                  		</div>
+                  	</div>
+                  	</div>
+                  	<div class="row">
+                  		<div class="col-md-12 wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">
+                  		<div class="form-group">
+                            <textarea class="form-control textarea" rows="3" name="mensaje" id="message" placeholder="Mensaje"></textarea>
+                            
+                            
+                            
+                            
+                  		</div>
+                  	</div>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-12">
+                  <button type="submit" class="btn main-btn pull-right wow bounceIn" data-wow-duration="1s" data-wow-delay="1s">Enviar mensaje</button>
+                  </div>
+                        
+                  </div>
+                </form>
+			</div>
+            
+        </div>
+    </div>
+</section>
+{% endblock %}
+    
